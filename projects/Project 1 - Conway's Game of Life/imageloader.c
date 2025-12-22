@@ -14,28 +14,35 @@
 **
 **************************************************************************/
 
+#include "imageloader.h"
+#include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <inttypes.h>
 #include <string.h>
-#include "imageloader.h"
 
-//Opens a .ppm P3 image file, and constructs an Image object. 
-//You may find the function fscanf useful.
-//Make sure that you close the file with fclose before returning.
-Image *readData(char *filename) 
-{
-	//YOUR CODE HERE
+Image* readData(char* filename) {
+	FILE* file = fopen(filename, "r");
+	if (NULL == file) {
+		return NULL;
+	}
+
+	char* format;
+	fscanf(file, "%s", &format);
+
+	printf("%d\n", *format);
+	/*for (size_t i = 0; i < 20; i++) {
+		printf("%c\n", buffer[i]);
+	}*/
+
+	fclose(file);
+	return NULL; // TODO: remove
 }
 
-//Given an image, prints to stdout (e.g. with printf) a .ppm P3 file with the image's data.
-void writeData(Image *image)
-{
-	//YOUR CODE HERE
+// Given an image, prints to stdout (e.g. with printf) a .ppm P3 file with the
+// image's data.
+void writeData(Image* image) {
+	// YOUR CODE HERE
 }
 
-//Frees an image
-void freeImage(Image *image)
-{
-	//YOUR CODE HERE
+void freeImage(Image* image) {
 }
