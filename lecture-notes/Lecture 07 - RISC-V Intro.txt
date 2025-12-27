@@ -1,3 +1,5 @@
+RISC-V is a free and open-source Instruction Set Architecture (ISA) for computer processors
+
 Basic job of a CPU: execute instructions
 Instruction: like a sentence: operations (verbs) applied to operands (objects) processed in sequence
 Different CPUs implement different sets of instructions. The set of instructions a particular CPU implements is an "Instruction Set Architecture" (ISA)
